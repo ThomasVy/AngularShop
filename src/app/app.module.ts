@@ -7,6 +7,11 @@ import { ShopListComponent } from './Components/shop-list/shop-list.component';
 import { ShoppingCartComponent } from './Components/shopping-cart/shopping-cart.component';
 import { ItemDetailsComponent } from './Components/item-details/item-details.component';
 import { TopNavBarComponent } from './Components/top-nav-bar/top-nav-bar.component';
+import { MessageComponent } from './Components/message/message.component';
+
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './Services/InMemoryData/in-memory-data.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -14,11 +19,17 @@ import { TopNavBarComponent } from './Components/top-nav-bar/top-nav-bar.compone
     ShopListComponent,
     ShoppingCartComponent,
     ItemDetailsComponent,
-    TopNavBarComponent
+    TopNavBarComponent,
+    MessageComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    //Remove once a real server is implemented
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, {dataEncapsulation: false}
+      )
   ],
   providers: [],
   bootstrap: [AppComponent]

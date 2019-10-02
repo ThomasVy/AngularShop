@@ -1,1 +1,9 @@
-<p>shop-list works!</p>
+<div>
+	<ul>
+		<li *ngFor="let item of items">
+			<a routerLink="/item/{{item.id}}">
+				{{item.name | uppercase}}
+			</a>
+		</li>
+	</ul>
+</div>

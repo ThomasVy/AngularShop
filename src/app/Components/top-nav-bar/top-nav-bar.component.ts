@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./top-nav-bar.component.sass']
 })
 export class TopNavBarComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit() {
