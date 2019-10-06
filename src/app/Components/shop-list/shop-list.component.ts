@@ -4,13 +4,13 @@ import { ShopListService } from '../../Services/shop-list/shop-list.service'
 @Component({
   selector: 'app-shop-list',
   templateUrl: './shop-list.component.html',
-  styleUrls: ['./shop-list.component.sass']
+  styleUrls: ['./shop-list.component.scss']
 })
 export class ShopListComponent implements OnInit {
   items: Item[];
 
   constructor(private itemListService: ShopListService) { }
-
+  
   ngOnInit() {
   	this.getItems();
   }

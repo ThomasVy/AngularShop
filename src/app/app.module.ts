@@ -12,6 +12,8 @@ import { MessageComponent } from './Components/message/message.component';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './Services/InMemoryData/in-memory-data.service';
 import { HttpClientModule } from '@angular/common/http';
+import { SearchBarComponent } from './Components/search-bar/search-bar.component';
+import { SearchResultComponent } from './Components/search-result/search-result.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { HttpClientModule } from '@angular/common/http';
     ShoppingCartComponent,
     ItemDetailsComponent,
     TopNavBarComponent,
-    MessageComponent
+    MessageComponent,
+    SearchBarComponent,
+    SearchResultComponent
   ],
   imports: [
     BrowserModule,

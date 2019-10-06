@@ -28,6 +28,17 @@ export class ShopListService {
   			catchError(this.handleError<Item[]>('getItems', []))
   			);
   }
+  searchItems(searchTerm: string): Observable<Item[]>
+  { 
+    if(!searchTerm.trim())
+    {
+      return of([]);
+    }
+    return this.http.get<Item[]>(`${this.shopListUrl}/?name=${searchTerm}`).pipe(
+      tap(_ => this.log(`found heroes matching "${searchTerm}"`)),
+      catchError(this.handleError<Item[]>('searchItems', []))
+      );
+  }
 
   private handleError<T> (operation = 'operation', result?: T)
   {
