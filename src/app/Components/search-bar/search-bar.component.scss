@@ -1,9 +1,14 @@
 #search-box
 {
 	border-radius: 20px;
+	padding: 0 10px;
 }
+
 #search-component
 {
 	margin-top: 10px;
 	text-align: center;
+	position: relative;
+  	display: block;
+  	float: right;
 }

@@ -12,6 +12,8 @@ import { ShopListService } from '../../Services/shop-list/shop-list.service';
 })
 export class SearchBarComponent implements OnInit {
   items$: Observable<Item[]>;
+  searchHighlight: boolean;
+  
   private searchTerm = new Subject<string>();
   constructor(private shopListService: ShopListService) { }
 

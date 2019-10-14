@@ -1,1 +1,9 @@
-<p>search-result works!</p>
+<div class="search-result">
+	<!-- [ngClass]="{'hide': !searchHighlight}" -->
+	<a *ngFor="let item of searchResults" routerLink="item/{{item.id}}">
+	{{item.name}}
+	</a>
+	<a *ngIf="searchTerm.length && !searchResults.length">
+		No Search Results
+	</a>
+</div>

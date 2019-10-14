@@ -1,12 +1,6 @@
 <div id="search-component">
-  <label for="search-box">Search
-  	<input #searchBox id="search-box" (input)="search(searchBox.value)" />
+  <label style="color:white;">Search
+  	<input #searchBox id="search-box" (focus)="searchHighlight=true" (focusout)="searchHighlight=false" (input)="search(searchBox.value)" />
   </label>
-  <ul class="search-result">
-    <li *ngFor="let item of items$ | async" >
-      <a routerLink="/detail/{{item.id}}">
-        {{item.name}}
-      </a>
-    </li>
-  </ul>
+  <app-search-result [searchHighlight]="searchHighlight" [searchResults]="items$ | async" [searchTerm]="searchBox.value"></app-search-result>
 </div>
