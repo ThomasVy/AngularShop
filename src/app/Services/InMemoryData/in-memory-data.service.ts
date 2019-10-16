@@ -9,7 +9,7 @@ import { Item } from '../../Model/item';
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
   	const items: Item[] = [
-  	 {id:11, name: "Bat"},
+  	 {id:11, name: "Bat", description:"I love coding"},
   	 {id:12, name: "Shoe"},
   	 {id:13, name: "Shovel"},
   	 {id:14, name: "Cat"},

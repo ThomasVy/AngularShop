@@ -2,3 +2,19 @@
 {
 	color: rgba(255,255,255,.5);
 }
+#shoppingCart
+{
+	opacity: 0.55;
+}
+#shoppingCart:hover
+{
+	opacity: 1;
+}
+.dot {
+  height: 25px;
+  width: 25px;
+  background-color: red;
+  border-radius: 50%;
+  display: inline-block;
+  text-align: center;
+}

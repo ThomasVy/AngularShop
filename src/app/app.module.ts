@@ -14,6 +14,7 @@ import { InMemoryDataService } from './Services/InMemoryData/in-memory-data.serv
 import { HttpClientModule } from '@angular/common/http';
 import { SearchBarComponent } from './Components/search-bar/search-bar.component';
 import { SearchResultComponent } from './Components/search-result/search-result.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { SearchResultComponent } from './Components/search-result/search-result.
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     //Remove once a real server is implemented
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, {dataEncapsulation: false}
