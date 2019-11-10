@@ -43,7 +43,7 @@ export class ItemDetailsComponent implements OnInit {
    alert("not implemented yet");
  }
 
- addToCheckout(): void{
+ addToShoppingCart(): void{
    alert("not implemented yet");
  }
 

@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./top-nav-bar.component.scss']
 })
 export class TopNavBarComponent implements OnInit {
-  numberOfItems: Number = 20;
   constructor() { }
 
   ngOnInit() {

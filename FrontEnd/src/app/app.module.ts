@@ -15,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SearchBarComponent } from './Components/search-bar/search-bar.component';
 import { SearchResultComponent } from './Components/search-result/search-result.component';
 import { FormsModule } from '@angular/forms';
+import { ShoppingCartNavBarComponent } from './Components/shopping-cart-nav-bar/shopping-cart-nav-bar.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { FormsModule } from '@angular/forms';
     TopNavBarComponent,
     MessageComponent,
     SearchBarComponent,
-    SearchResultComponent
+    SearchResultComponent,
+    ShoppingCartNavBarComponent
   ],
   imports: [
     BrowserModule,

@@ -1,12 +1,5 @@
 <nav class="navbar navbar-dark bg-dark">
 	<a class="navbar-brand" routerLink="">ShopApp</a>
-	<app-search-bar></app-search-bar>
-	<div class="navbar-nav">	
-	  <a id="shoppingCart" class="nav-item nav-link" routerLink="/shoppingcart">
-	  	<div class="cartImage">
-		  	<span class="dot">{{numberOfItems}}</span>
-		  	<img src="assets/baseline_shopping_cart_white_18dp.png" />Shopping Cart
-		</div>
-	  </a>
-	</div>
+	<app-search-bar></app-search-bar>	
+	<app-shopping-cart-nav-bar></app-shopping-cart-nav-bar>
 </nav>
