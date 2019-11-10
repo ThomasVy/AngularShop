@@ -1,0 +1,8 @@
+How to Use MongoDB 
+
+sudo service mongod start
+sudo service mongod stop
+
+mongo
+
+https://docs.mongodb.com/manual/reference/mongo-shell/
