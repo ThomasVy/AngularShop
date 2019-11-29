@@ -1,7 +1,7 @@
 <div>
 	<ul class="searchResults">
 		<li *ngFor="let item of items">
-			<a routerLink="/item/{{item.id}}">
+			<a routerLink="/item/{{item._id}}">
 				{{item.name | uppercase}}
 			</a>
 		</li>

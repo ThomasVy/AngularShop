@@ -12,8 +12,7 @@ import { MessageService } from '../../Services/message/message.service';
 })
 
 export class ShopListService {
-  private shopListUrl = 'api/items';
-
+  private itemsUrl = 'http://localhost:3000/items';
   httpOptions = {
   	headers: new HttpHeaders({ 'Content-Type': 'application/json'})
   };
@@ -22,7 +21,7 @@ export class ShopListService {
   			  private messageService: MessageService) { }
 
   getItems(): Observable<Item[]> {
-  	return this.http.get<Item[]>(this.shopListUrl)
+  	return this.http.get<Item[]>(this.itemsUrl)
   		.pipe(
   			tap(_ => this.log("fetched items")),
   			catchError(this.handleError<Item[]>('getItems', []))
@@ -30,10 +29,9 @@ export class ShopListService {
   }
 
   getItem<Data>(id: number): Observable<Item> {
-    const url = `${this.shopListUrl}/?id=^${id}$`;
-    return this.http.get<Item[]>(url)
+    const url = `${this.itemsUrl}/${id}`;
+    return this.http.get<Item>(url)
       .pipe(
-        map(items => items[0]), // returns a {0|1} element array
         tap(i => {
           const outcome = i ? `fetched` : `did not find`;
           this.log(`${outcome} item id=${id}`);
@@ -48,15 +46,15 @@ export class ShopListService {
     {
       return of([]);
     }
-    return this.http.get<Item[]>(`${this.shopListUrl}/?name=${searchTerm}`).pipe(
+    return this.http.get<Item[]>(`${this.itemsUrl}?search=${searchTerm}`).pipe(
       tap(_ => this.log(`found heroes matching "${searchTerm}"`)),
       catchError(this.handleError<Item[]>('searchItems', []))
       );
   }
 
   updateItem (item: Item): Observable<any> {
-    return this.http.put(this.shopListUrl, item, this.httpOptions).pipe(
-      tap(_ => this.log(`updated item id=${item.id}`)),
+    return this.http.put(this.itemsUrl, item, this.httpOptions).pipe(
+      tap(_ => this.log(`updated item id=${item._id}`)),
       catchError(this.handleError<any>('updateItem'))
     );
   }
